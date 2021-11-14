@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background: #202731;
+    z-index: auto;
+    overflow-x: hidden;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
+    z-index: 0;
+}
+
+.blue {
+    background: #3c31dd;
+}
+
+.red {
+    background: #dd3f31;
+}
+.green {
+    background: #004800;
+}
+.dark {
+    background: #0f0f10;
+}
+
+/*--------------- Transitions ------------------*/
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.BlueToGrey {
+    background-image: url("./svg/BlueToGray.svg");
+}
+
+.GreyToRed {
+    background-image: url("./svg/GreyToRed.svg");
+}
+
+:root {
+    --button-width: 4rem;
+    --button-height: calc(var(--button-width) * 0.8);
+    --rectangle-height: calc(var(--button-width)*0.1);
+    --rectangle-radius: calc(var(--button-width) * 0.04);
+    --translate: calc(var(--button-width) * 0.17);
+    --transition: 500ms;
+}
+
+.fancy-burger {
+    position: fixed;
+    margin: 20px 0 0 20px;
+    width: var(--button-width);
+    height: var(--button-height);
+    border: 0;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.rectangle {
+    position: absolute;
+    height: var(--rectangle-height);
+    background: white;
+    border-radius: var(--rectangle-radius);
+    transition: all var(--transition);
+    transition-timing-function: cubic-bezier(0.56, -0.3, 0.32, 1.35);
+}
+
+.rectangle--small {
+    width: calc(var(--button-width) / 2);
+}
+
+.rectangle--top {
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+}
+
+.rectangle--middle {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.rectangle--bottom {
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom right;
+}
+
+.box {
+    position: absolute;
+    top: 34px;
+    left: 40px;
+    width: 350px;
+    height: 200px;
+    border-radius: 33px;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top left;
+    transition-property: opacity, transform;
+    transition-duration: var(--transition);
+}
+
+.rectangle--top.open {
+    transform: translateX(var(--translate)) rotate(45deg);
+}
+.rectangle--middle.open {
+    transform: translateY(-50%) rotate(-45deg);
+}
+.rectangle--bottom.open {
+    transform: translateX(calc(var(--translate)*-1)) rotate(45deg);
+}
+.box.open{
+    opacity: 1;
+    transform: scale(1);
+}
