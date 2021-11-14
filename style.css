@@ -102,6 +102,7 @@ section {
 }
 
 .box {
+    background: #2a9bde;
     position: absolute;
     top: 34px;
     left: 40px;
