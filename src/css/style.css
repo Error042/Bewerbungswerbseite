@@ -1,0 +1,164 @@
+#header {
+  background-color: #10141A;
+  height: 6rem;
+  position: sticky;
+  z-index: 3;
+  font-family: "Roboto Mono", monospace;
+  font-size: x-large;
+}
+#header .burger-menu-container {
+  width: 5rem;
+  height: 5rem;
+}
+#header .burger-menu-container .burger-menu-bars {
+  background-color: #FFF;
+  height: 0.4rem;
+  border-radius: 0.5rem;
+}
+
+#intro {
+  background: linear-gradient(0deg, #10141A, #26292F);
+  display: flex;
+  justify-content: center;
+  height: 60rem;
+  box-sizing: border-box;
+  position: relative;
+}
+#intro #coderain-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+#intro #coderain-overlay {
+  position: absolute;
+  background: linear-gradient(0deg, #10141a 24%, rgba(16, 20, 26, 0.6) 67%, rgba(16, 20, 26, 0) 100%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#intro .neon-picture {
+  width: 25rem;
+  height: 25rem;
+  position: relative;
+  z-index: 3;
+  border-radius: 4rem;
+}
+#intro .neon-picture .neon-picture-content {
+  width: 100%;
+  height: 100%;
+  background-color: #10141A;
+  border-radius: 50%;
+  background-image: url("../img/PMa.png");
+  background-size: cover;
+}
+#intro .neon-picture::after, #intro .neon-picture::before {
+  content: "";
+  width: 27rem;
+  height: 27rem;
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(0, #FD229E, #00C1CF);
+  background-size: 100% 300%;
+  top: -1rem;
+  left: -1rem;
+  border-radius: 50%;
+  animation: move 2500ms infinite alternate linear;
+}
+#intro .neon-picture::after {
+  filter: blur(12.5rem);
+}
+#intro .intro-content {
+  position: relative;
+  margin-top: 2rem;
+}
+#intro .intro-content .intro-card {
+  width: 25rem;
+  height: 37.5rem;
+  background: linear-gradient(0deg, #26292F, #3A3C42);
+  border-radius: 1rem;
+  position: absolute;
+  top: 12.5rem;
+  font-family: "Roboto Mono", monospace;
+  color: #FFF;
+  z-index: 2;
+}
+#intro .intro-content .intro-card .h1-info-card {
+  padding: 0;
+  margin: 15rem 0 0 0;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.info-card-line {
+  content: "";
+  background-color: #FFF;
+  height: 0.2rem;
+  width: 80%;
+  margin: 0.3rem auto;
+  border-radius: 1rem;
+}
+
+.h2-info-card {
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.intro-card-icon-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info-card-icon {
+  display: flex;
+  font-size: 3rem;
+  padding: 0.5rem;
+  border: solid;
+  border-radius: 50%;
+  transition: 200ms;
+}
+.info-card-icon:hover {
+  background: linear-gradient(180deg, #FD229E, #B34FAA);
+}
+
+@keyframes move {
+  0% {
+    background-position: top center;
+  }
+  100% {
+    background-position: bottom center;
+  }
+}
+#about {
+  background-color: #3A3C42;
+  display: block;
+}
+
+#skills {
+  background-color: #26292F;
+}
+
+#resume {
+  background-color: #3A3C42;
+}
+
+#contact {
+  background-color: #26292F;
+}
+
+footer {
+  background-color: #3A3C42;
+}
+
+root {
+  font-family: "Roboto Mono", monospace;
+}
+
+body, html {
+  background-color: #10141A;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

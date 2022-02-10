@@ -1,0 +1,123 @@
+@import "colors"
+
+$width: 25rem
+$height: 25rem
+$borderSize: 1rem
+$borderRadius: 4rem
+
+#intro
+  background: linear-gradient(0deg, $darkGray, $midGray)
+  display: flex
+  justify-content: center
+  height: 60rem
+  box-sizing: border-box
+  position: relative
+
+  #coderain-canvas
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 0
+
+  #coderain-overlay
+    position: absolute
+    background:  linear-gradient(0deg, rgba(16,20,26,1) 24%, rgba(16,20,26,0.6) 67%, rgba(16,20,26,0) 100%)
+    width: 100%
+    height: 100%
+    z-index: 1
+
+
+  .neon-picture
+    width: $width
+    height: $height
+    position: relative
+    z-index: 3
+    border-radius: $borderRadius
+
+    .neon-picture-content
+      width: 100%
+      height: 100%
+      background-color: $darkGray
+      border-radius: 50%
+      background-image: url('../img/PMa.png')
+      background-size: cover
+
+    &::after, &::before
+      content: ""
+      width: $width + ($borderSize*2)
+      height: $height + ($borderSize*2)
+      position: absolute
+      z-index: -1
+      background-image: linear-gradient(0, $Magenta, $ciCyan)
+      background-size: 100% 300%
+      top: -$borderSize
+      left: -$borderSize
+      border-radius: 50%
+      animation: move 2500ms infinite alternate linear
+
+    &::after
+      filter: blur($width/2)
+
+  .intro-content
+    position: relative
+    margin-top: 2rem
+
+    .intro-card
+      width: $width
+      height: $height * 1.5
+      background: linear-gradient(0deg, $midGray, $lightGray)
+      border-radius: 1rem
+      position: absolute
+      top: 12.5rem
+      font-family: "Roboto Mono", monospace
+      color: $white
+      z-index: 2
+
+      .h1-info-card
+        padding: 0
+        margin: 15rem 0 0 0
+        font-size: 3.5rem
+        text-align: center
+
+.info-card-line
+  content: ""
+  background-color: $white
+  height: 0.2rem
+  width: 80%
+  margin: 0.3rem auto
+  border-radius: 1rem
+
+.h2-info-card
+  text-align: center
+  margin: 0 0 2rem 0
+
+.intro-card-icon-container
+  display: flex
+  justify-content: space-evenly
+
+.info-card-icon
+  display: flex
+  font-size: 3rem
+  padding: 0.5rem
+  border: solid
+  border-radius: 50%
+  transition: 200ms
+
+  &:hover
+    background: linear-gradient(180deg, $Magenta, $MagentaDark)
+
+
+
+
+
+
+
+
+
+
+
+@keyframes move
+  0%
+    background-position: top center
+  100%
+    background-position: bottom center
